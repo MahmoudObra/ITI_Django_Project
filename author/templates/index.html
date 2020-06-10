@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>Welcome To Our Online Library</title>
+        <link rel="stylesheet" href="{% static 'CSS/index.css' %}">
+    </head>
+    <body>
+
+        <h1>Hello Django, {{ key }}</h1>
+
+        
+        
+       <h3><a href="{% url 'Library:AllAuthors' %}">Display Authors in Our Library</a></h3>
+
+       <h3><a href="{% url 'book:searchBook' %}">Search for Books in Our Library</a></h3>
+
+       <h4>Search for Authors or Books You Want ..</h4>
+
+       <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn-primary">Go Search</button>
+        </form>
+
+    </body>
+</html>

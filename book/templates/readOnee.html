@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>Book Details</title>
+        <link rel="stylesheet" href="{% static 'CSS/index.css' %}">
+    </head>
+    <body>
+
+        <h2>{{ ABook.book_title }}</h2>
+        <h2>{{ ABook.category }}</h2>
+        <h2>{{ ABook.book_pages_num }}</h2>
+        <h2>{{ ABook.book_date_of_publish }}</h2> 
+        <h2>{{ ABook.book_status }}</h2>
+        
+
+        <h3><a href="{% url 'Library:EditBook' ABook.id %}">Edit This Book</a></h3>
+        
+       <h3><a href="{% url 'Library:DelBook' ABook.id %}">Delete This Book</a></h3>
+
+
+
+    </body>
+</html>

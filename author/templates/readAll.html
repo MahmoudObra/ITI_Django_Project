@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>All Authors Details</title>
+        <link rel="stylesheet" href="{% static 'CSS/index.css' %}">
+    </head>
+    <body>
+
+        <a href="{% url 'Library:createAuthor' %}">Create New Author</a>
+
+        {% for auth in allAuth %}
+
+        <h3><a href="{% url 'Library:ReadAuthor' auth.id %}">{{ auth.author_name }}</a></h3>
+
+        {% endfor %}
+
+    </body>
+</html>

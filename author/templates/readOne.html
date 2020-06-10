@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>Author Details</title>
+        <link rel="stylesheet" href="{% static 'CSS/index.css' %}">
+    </head>
+    <body>
+
+        <h2>{{ AnAuth.author_name }}</h2>
+        <h2>{{ AnAuth.author_age }}</h2>
+        <h2>{{ AnAuth.author_nationality }}</h2>
+        <h2>{{ AnAuth.author_phone_number }}</h2>
+        
+
+        <h3><a href="{% url 'Library:EditAuthor' AnAuth.id %}">Edit This Author</a></h3>
+        
+       <h3><a href="{% url 'Library:DelAuthor' AnAuth.id %}">Delete This Author</a></h3>
+
+
+
+    </body>
+</html>

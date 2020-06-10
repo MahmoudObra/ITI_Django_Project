@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>All Books Details</title>
+        <link rel="stylesheet" href="{% static 'CSS/index.css' %}">
+    </head>
+    <body>
+
+        <a href="{% url 'Library:createBook' %}">Create New Book</a>
+
+        {% for book in allBooks %}
+
+        <h3><a href="{% url 'Library:ReadBook' book.id %}">{{ book.book_title }}</a></h3>
+
+        {% endfor %}
+
+    </body>
+</html>
